@@ -1,6 +1,675 @@
-//turning all floors from Doom 2 into rotating messy stuff
+//turning all floors from Doom 2 into rotating messy stuff - warped liquids excluded
+
+//Portals will rotate counterclockwise//
+HardwareShader Texture GATE1
+{
+	Shader "shaders/rotate_flrs_cw.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GATE2
+{
+	Shader "shaders/rotate_flrs_cw.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GATE3
+{
+	Shader "shaders/rotate_flrs_cw.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GATE4
+{
+	Shader "shaders/rotate_flrs_cw.fp"
+	Speed 1.0
+}
+//Portals will rotate counterclockwise//
+
+HardwareShader Texture CEIL1_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL1_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL1_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL3_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL3_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL3_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL3_4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL3_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL3_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL4_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL4_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL4_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL5_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CEIL5_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture COMP01
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CONS1_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CONS1_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CONS1_7
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CRATOP1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture CRATOP2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture DEM1_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture DEM1_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture DEM1_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture DEM1_4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture DEM1_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture DEM1_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT10
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT14
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT17
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT18
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT19
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT1_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT1_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT1_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT20
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT22
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT23
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_7
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT5_8
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT8
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLAT9
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
 HardwareShader Texture FLOOR0_1
 {
 	Shader "shaders/rotate_flrs.fp"
-	Speed 4.50	
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR0_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR0_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR0_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR0_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR0_7
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR1_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR1_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR1_7
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR3_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR4_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR4_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR4_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR4_8
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR5_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR5_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR5_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR5_4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR6_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture FLOOR6_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GRASS1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GRASS2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GRNLITE1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture GRNROCK
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture MFLR8_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture MFLR8_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture MFLR8_3
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture MFLR8_4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK01
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK02
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK03
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK04
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK05
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK06
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK07
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK08
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK09
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK10
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK11
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK12
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK13
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK14
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK15
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK16
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK17
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK18
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK19
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture RROCK20
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture STEP1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture STEP2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture TLITE6_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture TLITE6_4
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture TLITE6_5
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture TLITE6_6
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture TLITE7_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
+}
+
+HardwareShader Texture TLITE7_2
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 1.0
 }
