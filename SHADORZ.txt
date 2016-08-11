@@ -1,0 +1,6 @@
+//turning all floors from Doom 2 into rotating messy stuff
+HardwareShader Texture FLOOR0_1
+{
+	Shader "shaders/rotate_flrs.fp"
+	Speed 4.50	
+}
