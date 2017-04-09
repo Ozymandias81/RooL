@@ -1,0 +1,2 @@
+server float rollamount = 500.0;
+server float pitchamount = 1.0;

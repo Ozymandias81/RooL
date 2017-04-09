@@ -1,0 +1,12 @@
+#library "rools"
+#include "zcommon.acs"
+
+Script "RollAmount"(void)
+{
+	SetResultValue(GetCVar("rollamount"));
+}
+
+Script "PitchAmount"(void)
+{
+	SetResultValue(GetCVar("pitchamount"));
+}

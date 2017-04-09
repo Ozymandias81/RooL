@@ -3,251 +3,251 @@
 
 ACTOR R_Arachnotron : Arachnotron replaces Arachnotron
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		BSPI AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BSPI AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		BSPI A 20 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI A 3 {A_BabyMetal;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI ABBCC 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI D 3 {A_BabyMetal;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI DEEFF 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BSPI A 20 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI A 3 {A_BabyMetal;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI ABBCC 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI D 3 {A_BabyMetal;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI DEEFF 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See+1
 	Missile:
-		BSPI A 20 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI G 4 BRIGHT {A_BspiAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI H 4 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI H 1 BRIGHT {A_SpidRefire;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BSPI A 20 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI G 4 BRIGHT {A_BspiAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI H 4 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI H 1 BRIGHT {A_SpidRefire;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto Missile+1
 	Pain:
-		BSPI I 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI I 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BSPI I 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI I 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See+1
 	Death:
-		BSPI J 20 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI K 7 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI LMNO 7 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI P -1 {A_BossDeath;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BSPI J 20 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI K 7 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI LMNO 7 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI P -1 {A_BossDeath;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		BSPI P 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BSPI ONMLKJ 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BSPI P 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BSPI ONMLKJ 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See+1
 	}
 }
 
 ACTOR R_Archvile : Archvile replaces Archvile
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		VILE AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		VILE AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		VILE AABBCCDDEEFF 2 {A_VileChase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		VILE AABBCCDDEEFF 2 {A_VileChase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		VILE G 0 BRIGHT {A_VileStart;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE G 10 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE H 8 BRIGHT {A_VileTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE IJKLMN 8 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE O 8 BRIGHT {A_VileAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE P 20 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		VILE G 0 BRIGHT {A_VileStart;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE G 10 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE H 8 BRIGHT {A_VileTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE IJKLMN 8 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE O 8 BRIGHT {A_VileAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE P 20 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Heal:
-		VILE "[\]" 10 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		VILE "[\]" 10 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		VILE Q 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE Q 5 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		VILE Q 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE Q 5 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		VILE Q 7 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE R 7 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE S 7 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE TUVWXY 7 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		VILE Z -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		VILE Q 7 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE R 7 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE S 7 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE TUVWXY 7 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		VILE Z -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	}
 }
 
 ACTOR R_BaronOfHell : BaronOfHell replaces BaronOfHell
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		BOSS AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOSS AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		BOSS AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOSS AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Melee:
 		Missile:
-		BOSS EF 8 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS G 8 {A_BruisAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOSS EF 8 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS G 8 {A_BruisAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		BOSS H 2 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS H 2 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOSS H 2 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS H 2 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		BOSS I 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS J 8 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS K 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS L 8 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS MN 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS O -1 {A_BossDeath;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOSS I 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS J 8 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS K 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS L 8 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS MN 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS O -1 {A_BossDeath;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		BOSS O 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOSS NMLKJI 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOSS O 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOSS NMLKJI 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_HellKnight : HellKnight replaces HellKnight
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		BOS2 AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOS2 AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		BOS2 AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOS2 AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Melee:
 	Missile:
-		BOS2 EF 8 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 G 8 {A_BruisAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOS2 EF 8 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 G 8 {A_BruisAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		BOS2 H 2 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 H 2 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOS2 H 2 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 H 2 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		BOS2 I 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 J 8 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 K 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 L 8 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 MN 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 O -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOS2 I 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 J 8 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 K 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 L 8 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 MN 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 O -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		BOS2 O 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		BOS2 NMLKJI 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		BOS2 O 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		BOS2 NMLKJI 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_Cacodemon : Cacodemon replaces Cacodemon
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		HEAD A 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		HEAD A 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		HEAD A 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		HEAD A 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		HEAD B 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD C 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD D 5 BRIGHT {A_HeadAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		HEAD B 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD C 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD D 5 BRIGHT {A_HeadAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		HEAD E 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD E 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		HEAD E 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD E 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		HEAD F 6
 		Goto See
 	Death:
-		HEAD G 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD H 8 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD I 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD J 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD K 8 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD L -1 {A_SetFloorClip;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		HEAD G 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD H 8 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD I 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD J 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD K 8 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD L -1 {A_SetFloorClip;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		HEAD L 8 {A_UnSetFloorClip;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		HEAD KJIHG 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		HEAD L 8 {A_UnSetFloorClip;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		HEAD KJIHG 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_Cyberdemon : Cyberdemon replaces Cyberdemon
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		CYBR AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CYBR AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		CYBR A 3 {A_Hoof;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR ABBCC 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR D 3 {A_Metal;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR D 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CYBR A 3 {A_Hoof;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR ABBCC 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR D 3 {A_Metal;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR D 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		CYBR E 6 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR F 12 {A_CyberAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR E 12 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR F 12 {A_CyberAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR E 12 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR F 12 {A_CyberAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CYBR E 6 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR F 12 {A_CyberAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR E 12 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR F 12 {A_CyberAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR E 12 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR F 12 {A_CyberAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		CYBR G 10 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CYBR G 10 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		CYBR H 10 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR I 10 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR JKL 10 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR M 10 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR NO 10 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR P 30 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CYBR P -1 {A_BossDeath;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CYBR H 10 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR I 10 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR JKL 10 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR M 10 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR NO 10 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR P 30 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CYBR P -1 {A_BossDeath;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	}
 }
 
 ACTOR R_Demon : Demon replaces Demon
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		SARG AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SARG AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		SARG AABBCCDD 2 Fast {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SARG AABBCCDD 2 Fast {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Melee:
-		SARG EF 8 Fast {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG G 8 Fast {A_SargAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SARG EF 8 Fast {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG G 8 Fast {A_SargAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		SARG H 2 Fast {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG H 2 Fast {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SARG H 2 Fast {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG H 2 Fast {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		SARG I 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG J 8 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG K 4 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG L 4 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG M 4 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG N -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SARG I 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG J 8 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG K 4 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG L 4 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG M 4 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG N -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		SARG N 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SARG MLKJI 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SARG N 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SARG MLKJI 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
@@ -257,388 +257,388 @@ ACTOR R_Spectre : R_Demon replaces Spectre
 
 ACTOR R_DoomImp : DoomImp replaces DoomImp
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		TROO AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		TROO AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		TROO AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		TROO AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Melee:
 	Missile:
-		TROO EF 8 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO G 6 {A_TroopAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));} 
+		TROO EF 8 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO G 6 {A_TroopAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));} 
 		Goto See
 	Pain:
-		TROO H 2 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO H 2 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		TROO H 2 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO H 2 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		TROO I 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO J 8 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO K 6 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO L 6 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO M -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		TROO I 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO J 8 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO K 6 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO L 6 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO M -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	XDeath:
-		TROO N 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO O 5 {A_XScream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO P 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO Q 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO RST 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		TROO U -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		TROO N 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO O 5 {A_XScream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO P 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO Q 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO RST 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		TROO U -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		TROO MLKJI 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		TROO MLKJI 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_Fatso : Fatso replaces Fatso
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		FATT AB 15 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		FATT AB 15 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		FATT AABBCCDDEEFF 4 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		FATT AABBCCDDEEFF 4 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		FATT G 20 {A_FatRaise;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT H 10 BRIGHT {A_FatAttack1;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT IG 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT H 10 BRIGHT {A_FatAttack2;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT IG 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT H 10 BRIGHT {A_FatAttack3;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT IG 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		FATT G 20 {A_FatRaise;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT H 10 BRIGHT {A_FatAttack1;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT IG 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT H 10 BRIGHT {A_FatAttack2;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT IG 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT H 10 BRIGHT {A_FatAttack3;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT IG 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		FATT J 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT J 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		FATT J 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT J 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		FATT K 6 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT L 6 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT M 6 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT NOPQRS 6 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT T -1 {A_BossDeath;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}    
+		FATT K 6 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT L 6 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT M 6 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT NOPQRS 6 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT T -1 {A_BossDeath;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}    
 		Stop
 	Raise:
-		FATT R 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		FATT QPONMLK 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		FATT R 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		FATT QPONMLK 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_LostSoul : LostSoul replaces LostSoul
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		SKUL AB 10 BRIGHT {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKUL AB 10 BRIGHT {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		SKUL AB 6 BRIGHT {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKUL AB 6 BRIGHT {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		SKUL C 10 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL D 4 BRIGHT {A_SkullAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL CD 4 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKUL C 10 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL D 4 BRIGHT {A_SkullAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL CD 4 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto Missile+2
 	Pain:
-		SKUL E 3 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL E 3 BRIGHT {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKUL E 3 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL E 3 BRIGHT {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		SKUL F 6 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL G 6 BRIGHT {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL H 6 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL I 6 BRIGHT {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL J 6 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKUL K 6 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKUL F 6 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL G 6 BRIGHT {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL H 6 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL I 6 BRIGHT {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL J 6 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKUL K 6 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	}
 }
 
 ACTOR R_PainElemental : PainElemental replaces PainElemental
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		PAIN A 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		PAIN A 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		PAIN AABBCC 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		PAIN AABBCC 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		PAIN D 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN E 5 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN F 5 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN F 0 BRIGHT {A_PainAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		PAIN D 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN E 5 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN F 5 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN F 0 BRIGHT {A_PainAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		PAIN G 6 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN G 6 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		PAIN G 6 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN G 6 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		PAIN H 8 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN I 8 BRIGHT {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN JK 8 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN L 8 BRIGHT {A_PainDie;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		PAIN M 8 BRIGHT {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		PAIN H 8 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN I 8 BRIGHT {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN JK 8 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN L 8 BRIGHT {A_PainDie;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		PAIN M 8 BRIGHT {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		PAIN MLKJIH 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		PAIN MLKJIH 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_ZombieMan : Zombieman replaces Zombieman
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		POSS AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		POSS AABBCCDD 4	{A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS AABBCCDD 4	{A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		POSS E 10 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS F 8 {A_PosAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS E 8 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS E 10 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS F 8 {A_PosAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS E 8 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		POSS G 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS G 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS G 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS G 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		POSS H 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS I 5 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS J 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS K 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS H 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS I 5 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS J 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS K 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		POSS L -1
 		Stop
 	XDeath:
-		POSS M 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS N 5 {A_XScream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS O 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS PQRST 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS M 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS N 5 {A_XScream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS O 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS PQRST 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		POSS U -1
 		Stop
 	Raise:
-		POSS K 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		POSS JIH 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		POSS K 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		POSS JIH 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_ShotgunGuy : ShotgunGuy replaces ShotgunGuy
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-	SPOS AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Loop
 	See:
-	SPOS AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Loop
 	Missile:
-	SPOS E 10 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS F 10 BRIGHT {A_SposAttackUseAtkSound;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS E 10 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS E 10 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS F 10 BRIGHT {A_SposAttackUseAtkSound;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS E 10 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Goto See
 	Pain:
-	SPOS G 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS G 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS G 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS G 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Goto See
 	Death:
-	SPOS H 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS I 5 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS J 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS K 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS L -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS H 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS I 5 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS J 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS K 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS L -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Stop
 	XDeath:
-	SPOS M 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS N 5 {A_XScream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS O 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS PQRST 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS U -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS M 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS N 5 {A_XScream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS O 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS PQRST 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS U -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Stop
 	Raise:
-	SPOS L 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-	SPOS KJIH 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+	SPOS L 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+	SPOS KJIH 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 	Goto See
 	}
 }
 
 ACTOR R_ChaingunGuy : ChaingunGuy replaces ChaingunGuy
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		CPOS AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		CPOS AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		CPOS E 10 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS FE 4 BRIGHT {A_CPosAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS F 1 {A_CPosRefire;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS E 10 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS FE 4 BRIGHT {A_CPosAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS F 1 {A_CPosRefire;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto Missile+1
 	Pain:
-		CPOS G 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS G 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS G 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS G 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		CPOS H 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS I 5 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS J 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS KLM 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS N -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS H 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS I 5 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS J 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS KLM 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS N -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	XDeath:
-		CPOS O 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS P 5 {A_XScream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS Q 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS RS 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS T -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS O 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS P 5 {A_XScream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS Q 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS RS 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS T -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		CPOS N 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		CPOS MLKJIH 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		CPOS N 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		CPOS MLKJIH 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_WolfensteinSS : WolfensteinSS replaces WolfensteinSS
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		SSWV AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		SSWV AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV AABBCCDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		SSWV E 10 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV F 10 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV G 4 BRIGHT {A_CPosAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV F 6 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV G 4 BRIGHT {A_CPosAttack;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV F 1 {A_CPosRefire;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV E 10 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV F 10 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV G 4 BRIGHT {A_CPosAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV F 6 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV G 4 BRIGHT {A_CPosAttack;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV F 1 {A_CPosRefire;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto Missile+1
 	Pain:
-		SSWV H 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV H 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV H 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV H 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		SSWV I 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV J 5 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV K 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV L 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV M -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV I 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV J 5 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV K 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV L 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV M -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	XDeath:
-		SSWV N 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV O 5 {A_XScream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV P 5 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV QRSTU 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV V -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV N 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV O 5 {A_XScream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV P 5 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV QRSTU 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV V -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		SSWV M 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SSWV LKJI 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SSWV M 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SSWV LKJI 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See 
 	}
 }
 
 ACTOR R_Revenant : Revenant replaces Revenant
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		SKEL AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		SKEL AABBCCDDEEFF 2 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL AABBCCDDEEFF 2 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Melee:
-		SKEL G 0 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL G 6 {A_SkelWhoosh;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL H 6 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL I 6 {A_SkelFist;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL G 0 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL G 6 {A_SkelWhoosh;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL H 6 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL I 6 {A_SkelFist;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Missile:
-		SKEL J 0 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL J 10 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL K 10 {A_SkelMissile;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL K 10 {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL J 0 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL J 10 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL K 10 {A_SkelMissile;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL K 10 {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Pain:
-		SKEL L 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL L 5 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL L 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL L 5 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		SKEL LM 7 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL N 7 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL O 7 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL P 7 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL Q -1 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL LM 7 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL N 7 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL O 7 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL P 7 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL Q -1 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Stop
 	Raise:
-		SKEL Q 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SKEL PONML 5 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SKEL Q 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SKEL PONML 5 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	}
 }
 
 ACTOR R_SpiderMastermind : SpiderMastermind replaces SpiderMastermind
 {
-	+FLATSPRITE +DONTFLIP +ROLLCENTER +ROLLSPRITE
+	+FLATSPRITE +ROLLCENTER +ROLLSPRITE
 	States
 	{
 	Spawn:
-		SPID AB 10 {A_Look;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SPID AB 10 {A_Look;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	See:
-		SPID A 3 {A_Metal;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID ABB 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID C 3 {A_Metal;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID CDD 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID E 3 {A_Metal;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID EFF 3 {A_Chase;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SPID A 3 {A_Metal;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID ABB 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID C 3 {A_Metal;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID CDD 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID E 3 {A_Metal;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID EFF 3 {A_Chase;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Loop
 	Missile:
-		SPID A 20 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}  
-		SPID G 4 BRIGHT {A_SPosAttackUseAtkSound;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID H 4 BRIGHT {A_SposAttackUseAtkSound;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID H 1 BRIGHT {A_SpidRefire;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SPID A 20 BRIGHT {A_FaceTarget;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}  
+		SPID G 4 BRIGHT {A_SPosAttackUseAtkSound;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID H 4 BRIGHT {A_SposAttackUseAtkSound;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID H 1 BRIGHT {A_SpidRefire;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto Missile+1
 	Pain:
-		SPID I 3 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID I 3 {A_Pain;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
+		SPID I 3 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID I 3 {A_Pain;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
 		Goto See
 	Death:
-		SPID J 20 {A_Scream;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID K 10 {A_NoBlocking;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID LMNOPQR 10 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID S 30 {A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}
-		SPID S -1 {A_BossDeath;A_SetRoll(roll+random(500.0,5000.0), SPF_INTERPOLATE);A_SetPitch(pitch+random(-1.0,1.0));}   
+		SPID J 20 {A_Scream;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID K 10 {A_NoBlocking;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID LMNOPQR 10 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID S 30 {A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}
+		SPID S -1 {A_BossDeath;A_SetRoll(roll+random(- CallACS("RollAmount"),CallACS("RollAmount")), SPF_INTERPOLATE);A_SetPitch(270+random(- CallACS("PitchAmount"),CallACS("PitchAmount")));}   
 		Stop
 	}
 }

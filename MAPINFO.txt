@@ -1,0 +1,4 @@
+map TESTMAP "Rolling Testmap"
+{
+	music = "D_SHAWN"
+}

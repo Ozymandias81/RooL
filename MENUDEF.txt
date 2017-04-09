@@ -1,0 +1,33 @@
+OptionMenu "OptionsMenu"
+{
+	Title "$OPTMNU_TITLE"
+	Submenu "RooL Advanced Options",	"RooLOpt"
+	StaticText " "
+	Submenu "$OPTMNU_CONTROLS",			"CustomizeControls"
+	Submenu "$OPTMNU_MOUSE",			"MouseOptions"
+	Submenu "$OPTMNU_JOYSTICK",			"JoystickOptions"
+	StaticText " "
+	Submenu "$OPTMNU_PLAYER",			"PlayerMenu"
+	Submenu "$OPTMNU_GAMEPLAY",			"GameplayOptions"
+	Submenu "$OPTMNU_COMPATIBILITY",	"CompatibilityOptions"
+	Submenu "$OPTMNU_AUTOMAP",			"AutomapOptions"
+	Submenu "$OPTMNU_HUD",				"HUDOptions"
+	Submenu "$OPTMNU_MISCELLANEOUS",	"MiscOptions"
+	Submenu "$OPTMNU_NETWORK",			"NetworkOptions"
+	Submenu "$OPTMNU_SOUND",			"SoundOptions"
+	Submenu "$OPTMNU_DISPLAY",			"VideoOptions"
+	Submenu "$OPTMNU_VIDEO",			"VideoModeMenu"
+	Submenu "$OPTMNU_CHANGERENDER",		"RendererMenu"
+	StaticText " "
+	SafeCommand "$OPTMNU_DEFAULTS",	"reset2defaults"
+	SafeCommand	"$OPTMNU_RESETTOSAVED",	"reset2saved"
+	Command "$OPTMNU_CONSOLE",			"menuconsole"
+}
+
+OptionMenu "RooLOpt"
+{
+	Title "RooL Options"
+	Slider "RooL Amount", "rollamount", 0.0,5000.0,1.0
+	StaticText ""
+	Slider "Pitch Amount", "pitchamount", 0.0,1.0,0.01
+}
