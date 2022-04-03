@@ -1,5 +1,5 @@
 ================================================================================
-        = RooL is a stupid wad created by Ozymandias81 on August 7 2016
+         RooL is a stupid wad created by Ozymandias81 on August 7 2016
 
 This jokewad aims to roll all stuff seen on screen for Doom 2 in a no-sense way.
              It's just experimenting with new features from GZDoom.
@@ -26,6 +26,4 @@ This jokewad aims to roll all stuff seen on screen for Doom 2 in a no-sense way.
 
    Official thread is here: http://forum.zdoom.org/viewtopic.php?f=19&t=53107
 
-                     Zio McCall did a small spoiler video:
-                  https://www.youtube.com/watch?v=ezAX3PX4w2A
 =================================================================================
